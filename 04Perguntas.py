@@ -1,37 +1,16 @@
-resposta_sim = 0
-perguntas = ['Telefonou para a vítima? ',
-             'Esteve no local do crime? ',
-             'Mora perto da vítima? ',
-             'Devia para a vítima? ',
-             'Já trabalhou com a vítima? ']
+r1 = int(input("Telefonou para a vítima? 1/Sim ou 0/Não: "))
+r2 = int(input("Esteve no local do crime? 1/Sim ou 0/Não: "))
+r3 = int(input("Mora perto da vítima? 1/Sim ou 0/Não: "))
+r4 = int(input("Devia para a vítima? 1/Sim ou 0/Não: "))
+r5 = int(input("Já trabalhou com a vítima? 1/Sim ou 0/Não: "))
 
-print(perguntas[0] + ' (S-sim ou N-não).')
-resposta = input('Resp.:')
-if resposta == 'S':
-    resposta_sim += 1
-print(perguntas[1] + ' (S-sim ou N-não).')
-resposta = input('Resp.:')
-if resposta == 'S':
-    resposta_sim += 1
-print(perguntas[2] + ' (S-sim ou N-não).')
-resposta = input('Resp.:')
-if resposta == 'S':
-    resposta_sim += 1
-print(perguntas[3] + ' (S-sim ou N-não).')
-resposta = input('Resp.:')
-if resposta == 'S':
-    resposta_sim += 1
-print(perguntas[4] + ' (S-sim ou N-não).')
-resposta = input('Resp.:')
-if resposta == 'S':
-    resposta_sim += 1
+soma_respostas = r1 + r2 + r3 + r4 + r5
 
-
-if resposta_sim == 2:
-    print('Suspeito')
-elif resposta_sim == 3 and resposta_sim == 4:
-    print('Cúmplice')
-elif resposta_sim == 5:
-    print('Assassino')
-else:
+if soma_respostas < 2:
     print('Inocente')
+elif soma_respostas == 2:
+    print('Suspeita')
+elif 3 <= soma_respostas <= 4:
+    print('Cúmplice')
+elif soma_respostas == 5:
+    print('Assassino')
